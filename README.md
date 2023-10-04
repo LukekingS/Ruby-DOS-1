@@ -4,9 +4,9 @@ RubyOS, RubyDOS or simply R-DOS is a project for an operating system based on th
 
 ## Members
 
-  - LEMOn3rd (hardware)
+  - @LukekingS (hardware)
   - tetex7 (software)
-  - blm16 (software)
+  - @blm16 (software)
 
 
 ## Motivation
