@@ -30,9 +30,60 @@ With this in mind, I and a few buddies of mine thought to ourselves that maybe w
   - 5¼\" floppy compatibility
   - VGA, MDA
 
+
+## General ideas
+
+### Start-up Screens
+
+```
+|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
+|                                |
+|                                |
+|                                |
+|                                |
+|        no system present       |
+|     insert system boot disk    |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
+|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
+|                                |
+|         Welcome to ...         |
+|                                |
+|                                |
+|              /\                |
+|             /  \               |
+|         Ru | by | OS           |
+|             \__/               |
+|                                |
+|                                |
+|                                |
+ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
+|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
+|   |¯¯¯¯¯¯¯¯¯|     |¯¯¯¯¯¯¯¯|   |
+|   | [F]iles |     | [D]ate |   |
+|   |_________|     |________|   |
+|                                |
+|   |¯¯¯¯¯¯¯¯¯¯¯¯|  |¯¯¯¯¯¯¯¯|   |
+|   | [S]ettings |  | [T]ime |   |
+|   |____________|  |________|   |
+|                                |
+|                                |
+| 01/01/1980  RubyOS       00:04 |
+|                                |
+ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+```
+
+
 ## Entry Log
 
   - 09/25/2023: start of project
   - 09/25/2023: general structure of project determined
   - 09/25/2023: brainstorming and code snippets
   - 10/05/2023: made a repository on GitHub of project
+  - 10/05/2023: added section \"start-up screen\"
