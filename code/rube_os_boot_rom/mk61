@@ -1,0 +1,80 @@
+#!/usr/bin/env python3
+import os
+import sys
+
+
+VERBOSE:bool = 0
+
+def vprint(st:str):
+    if VERBOSE == True:
+        print(st)
+    else:
+        return
+    return
+
+SCRTPTS = "scripts"
+PATH = os.path.abspath(".")
+
+def rl(path):
+    return os.path.exists(path)
+
+
+
+def mk_sh_args(arg: list[str]):
+    ar:list[str] = list()
+    out:str = str()
+    for i in range(3, len(arg)):
+        ar.append(arg[i])
+    for i in ar:
+        out = out + f" {i}"
+    return out
+
+def run_py(py_s:str):
+    os.system(f"python3 {PATH}/{SCRTPTS}/{py_s} {mk_sh_args(sys.argv)}")
+
+def run_bs(bs_s:str):
+    os.system(f"bash {PATH}/{SCRTPTS}/{bs_s} {mk_sh_args(sys.argv)}")
+
+def mk_make_args(arg: list[str]):
+    ar:list[str] = list()
+    out:str = str()
+    for i in range(2, len(arg)):
+        ar.append(arg[i])
+    for i in ar:
+        out = out + f" {i}"
+    return out
+
+def main(argv: list[str]):
+    AT = argv[1] 
+    if AT == "make":
+        vprint(f"make {mk_make_args(argv)}")
+        os.system(f"make {mk_make_args(argv)}")
+    elif AT == "size":
+        vprint(f"python3 {PATH}/{SCRTPTS}/get_file_size {argv[2]} 1")
+        os.system(f"python3 {PATH}/{SCRTPTS}/get_file_size {argv[2]} 1")
+    elif AT == "run":
+        #vprint(f"{PATH}/{SCRTPTS}/get_file_size {argv[2]} 1")
+        if rl(f"{PATH}/{SCRTPTS}/{argv[2]}.py") == True:
+            run_py(f"{argv[2]}.py")
+        elif rl(f"{PATH}/{SCRTPTS}/{argv[2]}") == True:
+            pyd = open(f"{PATH}/{SCRTPTS}/{argv[2]}" )
+            LINS = pyd.buffer.readlines()
+            if str(LINS[0]).find("#!/usr/bin/env python3") >= 1:
+                py = 1
+            else:
+                py = 0
+            pyd.close()
+            
+            if py == 1:
+                run_py(f"{argv[2]}")
+            else:
+                run_bs(f"{argv[2]}")
+        elif rl(f"{PATH}/{SCRTPTS}/{argv[2]}.sh") == True:
+            run_bs(f"{argv[2]}.sh")
+        else:
+            print(f"ERROR NO FILE")
+            
+        #os.system(f"python3 {PATH}/{SCRTPTS}/get_file_size {argv[2]} 1")
+    #print(mk_make_args(argv))
+
+main(sys.argv)

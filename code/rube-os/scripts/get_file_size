@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+from modpy.impl_vars import *
+from modpy.filetype import *
+import os
+import sys
+import io
+from bytesize import *
+
+
+
+NO_COL="\033[0m"
+MAGENTA="\033[0;35m"
+CYAN="\033[0;36m"
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+BLUE="\033[0;34m"
+YELLOW="\033[0;33m"
+BLINK="\033[33;5m"
+if len(sys.argv) == 3:
+    COLER:bool = bool(int(sys.argv[2])) 
+else:
+    COLER:bool = True
+
+
+def path_err():
+    if COLER == 1:
+        print(f"{GREEN}FileNotFoundError:{NO_COL}")
+        print(f"{GREEN}PATH: ({YELLOW}{PATH}/{FILE}{GREEN}){NO_COL}")
+    else:
+        print(f"PATH: ({PATH}/{FILE})")
+
+#print(COLER)
+PATH = os.path.abspath(".")
+FILE = sys.argv[1]
+try:
+    SIZE = os.path.getsize(f"{PATH}/{FILE}")
+except FileNotFoundError:
+    path_err()
+    sys.exit(666)
+K_SIZE = int(bytesize.Size(SIZE).convert_to(KB)) #SIZE + 1000
+
+
+
+
+if not COLER:
+    print(F"FILE [./{FILE}]:\nSIZE: {K_SIZE}k")
+    print(F"TYPE: [{file_type(sys.argv[1])}]")
+else:
+    print(F"{GREEN}FILE [{YELLOW}./{FILE}{GREEN}]:{NO_COL}\n{GREEN}SIZE: {YELLOW}{K_SIZE}K{NO_COL}")
+    print(F"{GREEN}TYPE: [{YELLOW}{file_type(sys.argv[1])}{GREEN}]{NO_COL}")
+
