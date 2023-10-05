@@ -16,9 +16,17 @@ Starting from a personal interest of technology itself, over a few months, I hav
 With this in mind, I and a few buddies of mine thought to ourselves that maybe we could start to build our very own version of an *old* computer like those mentioned above from scratch; the machine as well as the operating system.
 
 
+### Organisation
+
+  - /code/ will include all code-related files and documents
+  - /hardware/ will include all hardware-related files and documents
+  - /images/ will include all other images
+  - if necessary, other sub-folders will be created accordingly
+
+
 ### Quick Disclaimer
 
-**This repository will only cover the software aspect of this project.**
+This is a free-time project only which is worked on by three people from time to time, so don't expect and rapid or large updates here. But please follow us on our journey if you're interested nevertheless. :)
 
 
 ## General ideas
@@ -31,7 +39,7 @@ With this in mind, I and a few buddies of mine thought to ourselves that maybe w
   - built-in keyboard
     - possibly PS/2 compatible
   - ISA board expansion
-  - 5¼\" floppy compatibility
+  - 5¼" floppy compatibility
   - VGA, MDA
     - preferred method is VGA or at least composite via cinch connector
 
@@ -106,6 +114,9 @@ For a general shape of the device, the monitor is going to sit on top of a wedge
   - 09/25/2023: general structure of project determined
   - 09/25/2023: brainstorming and code snippets (on Discord server)
   - 10/05/2023: made a repository on GitHub of project
-  - 10/05/2023: added section \"start-up screen\"
+  - 10/05/2023: added section "start-up screens"
   - 10/05/2023: added folder /assets/images
   - 10/05/2023: added images to images folder
+  - 10/05/2023: added /code/ and /hardware/
+  - 10/05/2023: reorganized README.MD
+  - 10/05/2023: added section called "Organization" and changed "Quick Disclaimer"
