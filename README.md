@@ -21,7 +21,9 @@ With this in mind, I and a few buddies of mine thought to ourselves that maybe w
 **This repository will only cover the software aspect of this project.**
 
 
-## Requirements
+## General ideas
+
+### Requirements
 
   - 80186 / 80286 / 80386 CPU architecture
   - Z80 I/O processor
@@ -30,8 +32,6 @@ With this in mind, I and a few buddies of mine thought to ourselves that maybe w
   - 5¼\" floppy compatibility
   - VGA, MDA
 
-
-## General ideas
 
 ### Start-up Screens
 
