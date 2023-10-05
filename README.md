@@ -26,14 +26,19 @@ With this in mind, I and a few buddies of mine thought to ourselves that maybe w
 ### Requirements
 
   - 80186 / 80286 / 80386 CPU architecture
+    - most likely settling on the i386
   - Z80 I/O processor
   - built-in keyboard
+    - possibly PS/2 compatible
   - ISA board expansion
   - 5¼\" floppy compatibility
   - VGA, MDA
+    - preferred method is VGA or at least composite via cinch connector
 
 
 ### Start-up Screens
+
+  - Here are some start-up screen ideas we've come up with
 
 ```
 |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
@@ -49,7 +54,10 @@ With this in mind, I and a few buddies of mine thought to ourselves that maybe w
 |                                |
 |                                |
  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+```
+  - this one's inspired by CP/M
 
+```
 |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
 |                                |
 |         Welcome to ...         |
@@ -63,7 +71,10 @@ With this in mind, I and a few buddies of mine thought to ourselves that maybe w
 |                                |
 |                                |
  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+```
+  - this one's an own creation
 
+```
 |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
 |   |¯¯¯¯¯¯¯¯¯|     |¯¯¯¯¯¯¯¯|   |
 |   | [F]iles |     | [D]ate |   |
@@ -78,12 +89,23 @@ With this in mind, I and a few buddies of mine thought to ourselves that maybe w
 |                                |
  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 ```
+  - this one's inspired by a Triumph Adler notebook computer
 
+![A picture taken of a Triumph Adler Walkstation notebook computer from my collection whose set-up menu is being slightly represented in the rendition above.](/assets/images/triumph-adler-startup-screen.jpg)
+
+
+### Hardware Design
+
+For a general shape of the device, the monitor is going to sit on top of a wedge-shaped housing made of sheet metal. It will have a 5¼" floppy drive built into its right-hand side. On the backside, there will be serial and parallel ports and other periphery options, as well as the power connector and switch. The monitor will be monochrome with brightness and contrast adjustments on either the backside or (preferably) the front panel (much like old IBM monitors).
+
+![Here's a side-by-side overview sketch of this machine. Keep in mind that this design isn't set in stone but instead might change later on in the progress of this project.](/assets/images/Ruby_I.png)
 
 ## Entry Log
 
   - 09/25/2023: start of project
   - 09/25/2023: general structure of project determined
-  - 09/25/2023: brainstorming and code snippets
+  - 09/25/2023: brainstorming and code snippets (on Discord server)
   - 10/05/2023: made a repository on GitHub of project
   - 10/05/2023: added section \"start-up screen\"
+  - 10/05/2023: added folder /assets/images
+  - 10/05/2023: added images to images folder
