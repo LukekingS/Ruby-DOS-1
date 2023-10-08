@@ -3,26 +3,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "def.h"
+#include <stdio.h>
+#include "val_defs.h"
 #include "zrom_ex.h"
 
 FLAG MCL = 1;
-ERROR_PAK test();
 
-volatile void r();
+//volatile void r();
 
-ZROM_EX* rom_ex;
+
 
 void __sub(){return;}
 
+ptr_stack_t exit_er;
+
 void aexit()
 {
+    pstack_run(&exit_er);
+    pstack_free(&exit_er);
+    pstack_free(&roms_stack);
+}
 
+void kexit()
+{
+    aexit();
+}
+
+void zkill()
+{
+    MCL = 0;
 }
 
 int main()
 {
-    rom_ex = malloc(sizeof(ZROM_EX) * 10);
+    //rom_ex = malloc(sizeof(ZROM_EX) * 10);
+    pstack_init(&exit_er);
+    pstack_init(&roms_stack);
+    pstack_push(&exit_er, &zkill);
     while(MCL)
     {
         address16_t laddr = 0xFFF;
@@ -34,11 +51,7 @@ int main()
         //test();
         //assert(dr[0] == 1);
     }
-    if (ex_pop().STAT == ER_FAILED)
-    {
-        while(1);
-    }
-    free(rom_ex);
-    aexit();
+    
+    kexit();
     return MK_ECODE(100,45);
 }

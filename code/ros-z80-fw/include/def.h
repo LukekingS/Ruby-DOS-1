@@ -5,9 +5,10 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #define OS_MEM_RANG_S 0xFFFFC000
-
 
 #define FFUNC(NAME) NAME##_
 #define FMOD_FUNC(MODN, NAME) __##MODN##_##MOD##_##NAME
@@ -35,6 +36,7 @@
 #define byte_ref &
 #define arrlen(val) (size_t)(sizeof(val) / sizeof(*val))
 #define alen(v) rlen(arrlen(v))
+#define arr(v) v*
 typedef bool FLAG;
 
 typedef readonly bool CFLAG;
@@ -55,29 +57,35 @@ typedef signed char       SBYTE;
 
 typedef signed short      SWORD;
 
+typedef void* VOID_PTR;
+typedef arr(void*) VOID_PTR_ARR;
+typedef volatile void* VVOID_PTR;
+typedef void(*VOID_FPTR)();
 
 typedef uint8_t address8_t;
 typedef uint16_t address16_t;
 
+#define ptr_to_addr8(ptr) (address8_t)ptr
+#define ptr_to_addr16(ptr) (address16_t)ptr
 #define addr_to_ptr(add) (void*)add
 
 //typedef long double ldouble_t;
 
-typedef BYTE_FLAG EBYTE;
+typedef WORD EWORD;
 
 
 
-typedef enum e_ERROR_STAT
+typedef enum ERROR_STAT_e
 {
 	ER_FAILED = 10,
 	ER_SUCCESS = 20,
 	ER_UNDEF = 404,
 } ERROR_STAT;
 
-typedef struct
+typedef struct ERROR_PAK_s
 {
 	ERROR_STAT STAT;
-	EBYTE ECODE;
+	EWORD ECODE;
 } ERROR_PAK;
 
 #define MK_ECODE(DOM_CODE, SUB_CODE) (DOM_CODE + SUB_CODE)
@@ -87,6 +95,11 @@ typedef struct
 #define ER_PAK_FAILED(Nn, X) \
 	Nn.ECODE = X; \
     Nn.STAT = ER_FAILED; \
+    return Nn
+
+#define MK_ER_PAK(Nn, X, ST) \
+	Nn.ECODE = X; \
+    Nn.STAT = ST; \
     return Nn
 
 #define ER_PAK_SUCCESS(Nn, X) \
