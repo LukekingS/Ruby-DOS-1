@@ -21,7 +21,7 @@
 <!--<a href="https://discord.gg/"><img src="https://img.shields.io/badge/Discord Server-down-important">
 </a></p>-->
 
-# **λ61 Build System** 
+# **BIOS ROM code for Ruby1 system**
 
 <!--
      ###
