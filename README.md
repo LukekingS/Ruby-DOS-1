@@ -71,10 +71,10 @@ This is a free-time project only which is worked on by three people from time to
 |         Welcome to ...         |
 |                                |
 |                                |
-|              /\                |
-|             /  \               |
-|         Ru | by | OS           |
-|             \__/               |
+|                  /\            |
+|                 /  \           |
+|           Ruby | OS |          |
+|                 \__/           |
 |                                |
 |                                |
 |                                |
